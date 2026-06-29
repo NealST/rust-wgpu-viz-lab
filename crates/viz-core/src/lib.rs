@@ -8,7 +8,7 @@ pub fn init_panic_hook() {
     console_error_panic_hook::set_once();
 }
 
-/// Initialize a WebGPU instance and bindits rendering context to the given canvas element.
+/// Initialize a WebGPU instance and bind its rendering context to the given canvas element.
 ///
 /// # Arguments
 /// * `canvas_id` - The DOM id of the `<canvas>` element to render into.

@@ -7,8 +7,19 @@ import * as path from "node:path";
 const fetchDocContent = createServerFn({ method: "GET" })
   .validator((slug: string) => slug)
   .handler(async ({ data: slug }) => {
+    // Validate slug to prevent path traversal attacks
+    if (!/^[a-zA-Z0-9_-]+$/.test(slug)) {
+      throw new Error(`Invalid document slug: ${slug}`);
+    }
+
     const docsDir = path.resolve(process.cwd(), "../content/docs");
     const filePath = path.join(docsDir, `${slug}.md`);
+
+    // Double-check resolved path is within docsDir
+    const resolved = path.resolve(filePath);
+    if (!resolved.startsWith(docsDir)) {
+      throw new Error(`Invalid document path`);
+    }
 
     if (!fs.existsSync(filePath)) {
       throw new Error(`Document not found: ${slug}`);
