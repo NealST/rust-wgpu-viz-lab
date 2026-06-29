@@ -1,0 +1,31 @@
+[package]
+name = "viz-core"
+version = "0.1.0"
+edition = "2021"
+description = "High-performance data visualization with wgpu, compiled to WebAssembly"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+wgpu = "24.0"
+wasm-bindgen = "0.2"
+wasm-bindgen-futures = "0.4"
+js-sys = "0.3"
+console_error_panic_hook = "0.1"
+
+[dependencies.web-sys]
+version = "0.3"
+features = [
+  "Document",
+  "Window",
+  "Element",
+  "HtmlCanvasElement",
+  "GpuCanvasContext",
+  "Navigator",
+  "Gpu",
+]
+
+[profile.release]
+opt-level = "s"
+lto = true

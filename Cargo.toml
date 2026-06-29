@@ -1,0 +1,3 @@
+[workspace]
+members = ["crates/viz-core"]
+resolver = "2"
