@@ -1,0 +1,5 @@
+{
+  "name": "rust-wgpu-viz-lab",
+  "private": true,
+  "workspaces": ["frontend"]
+}
