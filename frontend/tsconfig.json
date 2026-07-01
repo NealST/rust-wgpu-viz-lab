@@ -13,8 +13,8 @@
     "noEmit": true,
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
     "paths": {
-      "~/*": ["./app/*"]
+      "@/*": ["./src/*"]
     }
   },
-  "include": ["app/**/*.ts", "app/**/*.tsx", "app.config.ts"]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "vite.config.ts"]
 }

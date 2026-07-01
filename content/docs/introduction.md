@@ -18,7 +18,7 @@ This project explores high-performance data visualization techniques using:
 ## Architecture
 
 ```
-┌──────────────┐     wasm-pack     ┌──────────────────┐
+┌──────────────┐   wasm-bindgen    ┌──────────────────┐
 │  Rust/wgpu   │ ───────────────▶  │   .wasm + JS     │
 │  (viz-core)  │                   │   glue code      │
 └──────────────┘                   └────────┬─────────┘
