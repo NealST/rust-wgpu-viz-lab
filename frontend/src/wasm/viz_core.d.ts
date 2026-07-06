@@ -3,6 +3,8 @@
 
 export function init_panic_hook(): void;
 
+export function run_interactive_particles(canvas_id: string): Promise<void>;
+
 export function run_line_chart(canvas_id: string): Promise<void>;
 
 export function run_particles(canvas_id: string): Promise<void>;
@@ -14,15 +16,17 @@ export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembl
 export interface InitOutput {
     readonly memory: WebAssembly.Memory;
     readonly init_panic_hook: () => void;
+    readonly run_interactive_particles: (a: number, b: number) => any;
     readonly run_triangle: (a: number, b: number) => any;
     readonly run_line_chart: (a: number, b: number) => any;
     readonly run_particles: (a: number, b: number) => any;
     readonly wasm_bindgen__convert__closures_____invoke__h9e56e594b940a1fc: (a: number, b: number, c: any) => [number, number];
     readonly wasm_bindgen__convert__closures_____invoke__h00189e33467c1bd3: (a: number, b: number, c: any, d: any) => void;
-    readonly wasm_bindgen__convert__closures_____invoke__h51d8957574f94b2c: (a: number, b: number, c: any) => void;
-    readonly wasm_bindgen__convert__closures_____invoke__h286df5a75fcafa84: (a: number, b: number, c: any) => void;
+    readonly wasm_bindgen__convert__closures_____invoke__h97dc0145d2108605: (a: number, b: number, c: any) => void;
+    readonly wasm_bindgen__convert__closures_____invoke__h679a2e054a6eb42b: (a: number, b: number, c: any) => void;
+    readonly wasm_bindgen__convert__closures_____invoke__h9bbb499c99c33e90: (a: number, b: number, c: any) => void;
     readonly wasm_bindgen__convert__closures_____invoke__hbb2d0993edd349aa: (a: number, b: number) => number;
-    readonly wasm_bindgen__convert__closures_____invoke__h67590b58093eef7c: (a: number, b: number) => void;
+    readonly wasm_bindgen__convert__closures_____invoke__h89d680ce5f0aaa7c: (a: number, b: number) => void;
     readonly __wbindgen_malloc: (a: number, b: number) => number;
     readonly __wbindgen_realloc: (a: number, b: number, c: number, d: number) => number;
     readonly __wbindgen_exn_store: (a: number) => void;

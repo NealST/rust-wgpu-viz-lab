@@ -28,4 +28,11 @@ export const DEMOS: Demo[] = [
     wasmFn: "run_particles",
     docSlug: "particles",
   },
+  {
+    slug: "interactive-particles",
+    title: "Interactive Particles",
+    description: "Pass mouse coordinates to compute shader using Uniform Buffer to attract/repel particles",
+    wasmFn: "run_interactive_particles",
+    docSlug: "interactive-particles",
+  },
 ];
