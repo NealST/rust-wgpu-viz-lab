@@ -25,6 +25,8 @@ features = [
   "GpuCanvasContext",
   "Navigator",
   "Gpu",
+  "MouseEvent",
+  "DomRect"
 ]
 
 [profile.release]

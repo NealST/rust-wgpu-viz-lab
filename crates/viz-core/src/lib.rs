@@ -1,6 +1,7 @@
 use wasm_bindgen::prelude::*;
 
 mod gpu;
+mod interactive_particles;
 mod line_chart;
 mod particles;
 mod triangle;
@@ -8,6 +9,11 @@ mod triangle;
 #[wasm_bindgen(start)]
 pub fn init_panic_hook() {
     console_error_panic_hook::set_once();
+}
+
+#[wasm_bindgen]
+pub async fn run_interactive_particles(canvas_id: &str) -> Result<(), JsValue> {
+    interactive_particles::run(canvas_id).await
 }
 
 #[wasm_bindgen]
